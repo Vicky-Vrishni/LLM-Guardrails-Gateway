@@ -1,0 +1,25 @@
+blocked_topics:
+  - "medical advice"
+  - "legal advice"
+  - "competitor names"
+  - "financial investment advice"
+
+blocked_keywords:
+  - "ignore previous instructions"
+  - "ignore all instructions"
+  - "you are now"
+  - "system prompt"
+  - "jailbreak"
+  - "act as"
+  - "pretend you are"
+  - "developer mode"
+
+require_disclaimer: true
+
+disclaimer_text: "Note: This is general information, not professional advice."
+
+max_input_length: 2000
+
+max_output_length: 3000
+
+allow_pii_in_input: false

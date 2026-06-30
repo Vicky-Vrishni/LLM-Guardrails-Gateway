@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+pydantic
+groq
+python-dotenv
+pyyaml
+presidio-analyzer
+presidio-anonymizer
+spacy
+streamlit
+requests
