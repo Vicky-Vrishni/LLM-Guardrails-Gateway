@@ -1,55 +1,34 @@
-from presidio_analyzer import AnalyzerEngine
+import re
 from app.policy_engine import PolicyEngine
 
-from presidio_analyzer.nlp_engine import NlpEngineProvider
-
-nlp_configuration = {
-    "nlp_engine_name": "spacy",
-    "models": [{"lang_code": "en", "model_name": "en_core_web_sm"}],
-}
-
-provider = NlpEngineProvider(nlp_configuration=nlp_configuration)
-nlp_engine = provider.create_engine()
-
-analyzer = AnalyzerEngine(nlp_engine=nlp_engine, supported_languages=["en"])
 policy = PolicyEngine()
+
+PII_PATTERNS = {
+    "EMAIL_ADDRESS": r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+",
+    "PHONE_NUMBER": r"\b(\+?\d{1,3}[\s.-]?)?(\(?\d{3}\)?[\s.-]?)?\d{3}[\s.-]?\d{4}\b",
+    "CREDIT_CARD": r"\b(?:\d{4}[\s.-]?){3}\d{4}\b",
+    "US_SSN": r"\b\d{3}-\d{2}-\d{4}\b",
+}
 
 
 def check_jailbreak(user_input: str):
     lowered_input = user_input.lower()
     blocked_keywords = policy.get_blocked_keywords()
-
     for keyword in blocked_keywords:
         if keyword.lower() in lowered_input:
             return True, keyword
-
     return False, None
 
 
-SENSITIVE_PII_TYPES = [
-    "EMAIL_ADDRESS",
-    "PHONE_NUMBER",
-    "CREDIT_CARD",
-    "US_SSN",
-    "US_BANK_NUMBER",
-    "IBAN_CODE",
-    "CRYPTO"
-]
-
-
 def check_pii(user_input: str):
-    results = analyzer.analyze(text=user_input, language="en")
-
-    filtered_results = [
-        result for result in results
-        if result.entity_type in SENSITIVE_PII_TYPES and result.score >= 0.5
-    ]
-
-    if len(filtered_results) > 0:
-        detected_types = [result.entity_type for result in filtered_results]
-        return True, detected_types
-
+    detected = []
+    for pii_type, pattern in PII_PATTERNS.items():
+        if re.search(pattern, user_input):
+            detected.append(pii_type)
+    if detected:
+        return True, detected
     return False, []
+
 
 def check_input_length(user_input: str):
     max_length = policy.get_max_input_length()
