@@ -7,7 +7,7 @@ st.set_page_config(
     layout="centered"
 )
 
-API_URL = "http://127.0.0.1:8000/chat"
+API_URL = "https://llm-guardrails-gateway-1ron.onrender.com/chat"
 
 st.title("🛡️ LLM Guardrails Gateway")
 st.caption("A safety middleware layer that sits between users and any LLM — blocking jailbreaks, PII leaks, and policy violations before they reach the model.")
