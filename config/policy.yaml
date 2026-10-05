@@ -1,3 +1,5 @@
+
+# LLM doesn't response for this topic
 blocked_topics:
   - "medical advice"
   - "legal advice"
