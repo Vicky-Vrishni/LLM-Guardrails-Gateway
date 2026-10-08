@@ -158,4 +158,4 @@ streamlit run streamlit_app.py
 
 **Vicky Yadav**
 - GitHub: [@Vicky-Vrishni](https://github.com/Vicky-Vrishni)
-- Email: skvickyyadav942@gmail.com
+- Email: vikkykumar9362@gmail.com
