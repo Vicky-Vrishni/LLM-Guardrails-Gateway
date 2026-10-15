@@ -1,5 +1,6 @@
 
-# LLM doesn't response for this topic
+# LLM Guardrails Gateway Policy
+
 blocked_topics:
   - "medical advice"
   - "legal advice"
@@ -9,19 +10,33 @@ blocked_topics:
 blocked_keywords:
   - "ignore previous instructions"
   - "ignore all instructions"
-  - "you are now"
-  - "system prompt"
-  - "jailbreak"
-  - "act as"
-  - "pretend you are"
+  - "reveal the system prompt"
   - "developer mode"
+  - "jailbreak"
 
 require_disclaimer: true
-
 disclaimer_text: "Note: This is general information, not professional advice."
 
 max_input_length: 2000
-
 max_output_length: 3000
 
+# PII handling
 allow_pii_in_input: false
+pii_action: "block"
+
+# Prompt-injection handling
+prompt_injection:
+  enabled: true
+  action: "block"
+
+# Output safety
+output_guardrails:
+  enabled: true
+  block_secrets: true
+  block_unsafe_output: true
+
+# Resource limits
+rate_limit:
+  enabled: true
+  requests_per_minute: 30
+
