@@ -4,7 +4,7 @@ import requests
 st.set_page_config(
     page_title="LLM Guardrails Gateway",
     page_icon="🛡️",
-    layout="centered"
+    layout="centered" 
 )
 
 API_URL = "https://llm-guardrails-gateway-1ron.onrender.com/chat" 
