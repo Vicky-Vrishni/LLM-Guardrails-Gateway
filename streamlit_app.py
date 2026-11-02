@@ -72,3 +72,6 @@ if user_input:
             except Exception as e:
                 error_msg = f"Could not connect to the backend server. Make sure it's running.\n\nError: {str(e)}"
                 st.error(error_msg)
+
+
+
