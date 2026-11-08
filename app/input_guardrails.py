@@ -9,8 +9,6 @@ PII_PATTERNS = {
     "CREDIT_CARD": r"\b(?:\d{4}[\s.-]?){3}\d{4}\b",
     "US_SSN": r"\b\d{3}-\d{2}-\d{4}\b",
 }
-
-
 def check_jailbreak(user_input: str):
     lowered_input = user_input.lower()
     blocked_keywords = policy.get_blocked_keywords()
