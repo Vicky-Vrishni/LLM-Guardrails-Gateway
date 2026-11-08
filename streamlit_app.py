@@ -6,7 +6,7 @@ st.set_page_config(
     page_icon="🛡️",
     layout="centered" 
 )
-
+ 
 API_URL = "https://llm-guardrails-gateway-1ron.onrender.com/chat" 
 
 st.title(" LLM Guardrails Gateway")
