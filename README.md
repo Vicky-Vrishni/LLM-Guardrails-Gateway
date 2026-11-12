@@ -2,7 +2,7 @@
 
 A production-grade middleware safety layer that sits between users and any LLM — blocking jailbreaks, PII leaks, and policy violations in real-time, with self-healing auto-retry logic.
 
-🔴 **Live Demo:** [Click here to try it](https://llm-guardrails-gateway-yvpkhkrpqemid6t34qqkuk.streamlit.app)
+🔴 **Live Demo:** [Live Demo](https://llm-guardrails-gateway-yvpkhkrpqemid6t34qqkuk.streamlit.app)
 
 ---
 
