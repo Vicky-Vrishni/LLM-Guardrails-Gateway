@@ -6,7 +6,7 @@ A production-grade middleware safety layer that sits between users and any LLM �
 
 ---
 
-## 🚀 What is this?
+## What is this?
 
 Most developers plug an LLM into their app and call it a day. This project builds the **safety layer that should sit in between** — a configurable guardrails gateway that:
 
