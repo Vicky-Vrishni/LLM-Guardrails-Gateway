@@ -11,7 +11,7 @@ app = FastAPI(title="LLM Guardrails Gateway")
 def health_check():
     return {"status": "running", "message": "LLM Guardrails Gateway is live"}
 
-
+ 
 @app.post("/chat", response_model=ChatResponse)
 def chat(request: ChatRequest):
     user_input = request.user_input
