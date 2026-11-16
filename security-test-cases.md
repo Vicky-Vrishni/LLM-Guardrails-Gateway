@@ -26,6 +26,6 @@ This document describes example test cases for validating LLM security guardrail
 
 **Expected behavior:** The system should allow legitimate requests that comply with its policies.
 
-## Notes
+## Notes 
 
 These are illustrative test cases. Actual results should be verified against the implemented guardrails.
