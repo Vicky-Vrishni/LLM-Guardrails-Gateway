@@ -63,7 +63,7 @@ if user_input:
                         st.warning(f"⚠️ Note: {', '.join(data['flagged_issues'])}")
 
                 else:
-                    blocked_msg = f"🚫 **Request blocked.**\n\n**Reason:** {data['blocked_reason']}\n\n**Details:** {', '.join(data['flagged_issues'])}"
+                    blocked_msg = f"**Request blocked.**\n\n**Reason:** {data['blocked_reason']}\n\n**Details:** {', '.join(data['flagged_issues'])}"
                     st.error(blocked_msg)
                     st.session_state.chat_history.append(
                         {"role": "assistant", "content": blocked_msg}
