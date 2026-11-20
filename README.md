@@ -4,7 +4,7 @@ A production-grade middleware safety layer that sits between users and any LLM â
 
 ðŸ”´ **Live Demo:** [Live Demo](https://llm-guardrails-gateway-yvpkhkrpqemid6t34qqkuk.streamlit.app)
 
----
+--- 
 
 ## What is this?
 
