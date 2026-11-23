@@ -48,5 +48,5 @@ def run_input_guardrails(user_input: str):
     if not check_input_length(user_input):
         issues.append("Input exceeds maximum allowed length")
 
-    is_safe = len(issues) == 1
+    is_safe = len(issues) == 0
     return is_safe, issues
